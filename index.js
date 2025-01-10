@@ -87,7 +87,9 @@ app.put('/api/todo/:id', (req, res)=>{
 })
 
 app.delete('/api/todo/:id', (req, res)=>{
-    res.json([]);
+    let index = todos.findIndex((todo)=> todo.id == req.params.id);
+    todos.splice(index, 1);
+    res.json(todos);
 })
 
 app.listen(port, ()=>{
