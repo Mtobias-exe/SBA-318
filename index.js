@@ -6,6 +6,7 @@ const todos = require('./data/todo')
 const users = require('./data/users')
 
 const userRoutes = require('./routes/userRoutes')
+const path = require('path');
 
 //middleware for get post
 const bodyParser = require('body-parser')
@@ -14,9 +15,10 @@ app.use('/api/users', userRoutes)
 // app.use('/api/users', postRoutes)
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json({extended: true}))
+app.use(express.static(__dirname + '/Public'));
 
 app.get('/', (req, res)=>{
-    res.send('Todo List Home Page')
+    res.sendFile(path.join(__dirname + '/views/index.html'))
 })
 
 //get all users

@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <h1>Todo List</h1>
+    <form class="input-cont">
+        <input id="input" type="text" placeholder="Enter todo">
+        <button id="submit-todo" type="submit"> Submit</button>
+    </form>
+
+    <div class="todo-cont">
+        <div class="todo-info">
+            <input type="checkbox" class="checked-todo" checked>
+            <p class="todo-name">Clean room</p>
+        </div>
+        <div class="todo-btn">
+            <button class="todo-edit">Edit</button>
+            <button class="todo-delete">Delete</button>
+        </div>
+    </div>
+
+
 </body>
 </html>
